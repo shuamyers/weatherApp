@@ -89,7 +89,7 @@ document.querySelector('.fahrenheit').addEventListener('click', () => {
 
 function getWeatherData(lat, lng, unit = 'metric') {
     var NUM_OF_DAYS = 7 ;
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=${unit}&APPID=${weather_API_KEY}`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=${unit}&APPID=${weather_API_KEY}`)
         .then(res => {
             console.log('weather data is', res.data)
             renderweatherNow(res.data);
@@ -120,7 +120,7 @@ function renderweatherNow(weather){
     elHumidity.innerText = weather.main.humidity + '%'; 
 
     var elImg = document.querySelector('.whether-img img');
-    elImg.src=`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
+    elImg.src=`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`
 
      var sunsetObj = new Date(weather.sys.sunset);
      var elSunset =document.querySelector('.sunset span');
