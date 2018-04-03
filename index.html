@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whether App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container flex space-between container">
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Emojione_1F31E.svg/32px-Emojione_1F31E.svg.png" alt="">
+                <h1>whether</h1>
+            </div>
+            <div class="search-bar">
+                <form class="search-form" onsubmit="return false;">
+                    <input type="search" name="" id="searchInput" placeholder="Enter location">
+                    <button type="submit" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <button type="button" class="my-loc-btn" title="Go to your location">
+                    <i class="fas fa-location-arrow"></i>
+                </button>
+                <ul class="dropdown-metric">
+                    <li class="metric-symbol">
+                        C°  
+                    </li>
+                    <li>
+                        <ul class="dropdown-metric-content">
+                            <li class="celsius">C°</li>
+                            <li class="fahrenheit">F°</li>
+                        </ul>
+                    </li>
+            </div>
+        </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="main-wrapper flex justify-center">
+                <section class="whether-sec">
+                    <div class="whether-now">
+                        <div class="loc">
+                            <span class="city"></span>,
+                            <span class="country-code"></span>
+                        </div>
+                        <div class="whether-wrapper flex space-around">
+                            <div class="whether-content">
+                                <h2 class="temp"></h2>
+                                <h2 class="status"></h2>
+                                <h3 class="humidity">Humidity:
+                                    <span></span>
+                                </h3>
+                            </div>
+                            <div class="whether-img">
+                                <img src="http://openweathermap.org/img/w/01d.png" alt="">
+                                <h3 class="sunset">Sunset: <span></span></h3>
+                                <h3 class="wind">wind Speed: <span></span></h3>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="map-sec">
+                    <!-- <div>
+                        map
+                    </div> -->
+                    <div class="map-wrapper">
+                        <div id="map" style="width: 100%; height: 320px;"></div>
+                    </div>
+                </section>
+            </div>
+            <section>
+                <div class="daily-forecast mobile">
+
+                </div>
+                <div class="next-days flex">
+
+                </div>
+                <div class="more-info">
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+
+</body>
+
+</html>
