@@ -96,7 +96,6 @@ function getWeatherData(lat, lng, unit = 'metric') {
         });
     axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&cnt=${NUM_OF_DAYS}&units=${unit}&APPID=${weather_API_KEY}`)
         .then(res => {
-            console.log('weather data is num of days', res.data)
             renderweatherMunDays(res.data);
         });
     // 2877695d61c707f312e28cc68f9dc19d
@@ -140,7 +139,7 @@ function renderweatherMunDays(weathers){
         <div class="day day${idx}">
             <h2>${date.getHours()}:00</h2>
             <p>${weather[idx].weather[0].main}</p>
-            <img src="http://openweathermap.org/img/w/${weather[idx].weather[0].icon}.png" alt="">
+            <img src="https://openweathermap.org/img/w/${weather[idx].weather[0].icon}.png" alt="">
             <h2>${Math.round(weather[idx].main.temp) + '°'}</h2>
         </div>
         `        
