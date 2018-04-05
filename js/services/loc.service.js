@@ -1,11 +1,3 @@
-// ES6 Object shorthand syntax:
-// var x = 9;
-// var y = 8;
-
-// var obj = {x, y};
-// console.log('obj', obj);
-
-
 
 var locs = [{lat: 11.22, lng: 22.11}]
 

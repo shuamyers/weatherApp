@@ -1,2 +1,3 @@
+
 @import '_global.css';
-@import '_desktop' (min-width:793px);
+@import '_desktop.css' (min-width:793px);

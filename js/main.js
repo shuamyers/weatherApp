@@ -49,6 +49,7 @@ document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
             mapService.addMarker({ lat, lng })
             weatherService.getWeatherData(lat, lng);
             console.log('User position is:', coords);
+            changeClipboardIcon(false);
         })
         .catch(err => {
             console.log('err!!!', err);
@@ -57,6 +58,7 @@ document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
 
 document.querySelector('.search-form').addEventListener('submit', () => {
     searchAddress();
+    changeClipboardIcon(false);
 })
 
 function searchAddress() {
@@ -71,7 +73,6 @@ function searchAddress() {
             var { lat, lng } = location;
             crrLoc = { lat, lng };
             weatherService.getWeatherData(lat, lng)
-
         })
         .catch(err => {
             console.log('Search Err', err);
@@ -82,6 +83,7 @@ function searchAddress() {
 document.querySelector('.celsius').addEventListener('click', () => {
     weatherService.getWeatherData(crrLoc.lat,crrLoc.lng);
     document.querySelector('.metric-symbol').innerText = 'C°'
+   
 })
 document.querySelector('.fahrenheit').addEventListener('click', () => {
     weatherService.getWeatherData(crrLoc.lat, crrLoc.lng, 'imperial');
@@ -94,7 +96,7 @@ document.querySelector('.fahrenheit').addEventListener('click', () => {
 
 document.querySelector('.clipboard-btn').addEventListener('click', () => {
     getQueryStr ()
-    // document.querySelector('.clipboard-btn i').classList = 'F°'
+    
 })
 
 
@@ -106,10 +108,9 @@ function getQueryStr () {
     elClipboard.select();
     try {
         let successful = document.execCommand('copy');
-        let msg = successful ? 'successful' : 'unsuccessful';
-        console.log('Copying text command was ' + msg);
+        changeClipboardIcon(true);
     } catch (err) {
-        console.log('Oops, unable to copy');
+        console.log('Sorry copy did not work');
     }
     elClipboard.hidden = true;
 }
@@ -123,6 +124,22 @@ function getUrlParms(url,queryIdx){
             lat:parms[0]*1,
             lng:parms[1]*1
         }
+}
+
+function changeClipboardIcon(copied){
+    var elClipboardIcon = document.querySelector('.clipboard-btn i');
+    var elClipboard =document.querySelector('.clipboard-btn')
+    if(copied){
+        elClipboardIcon.classList.remove('fa-clipboard')
+        elClipboardIcon.classList.add('fa-clipboard-check')
+        elClipboard.classList.add('highligh-success');
+        setTimeout(()=>{
+            elClipboard.classList.remove('highligh-success')
+        },1000)
+    }else{
+        elClipboard.classList.remove('fa-clipboard-check')
+        elClipboard.classList.add('fa-clipboard')
+    }
 }
 
 
@@ -139,4 +156,3 @@ function getUrlParms(url,queryIdx){
 // }
 
 
-// google api key AIzaSyBLTGWuNv67ZQBPz4eFJLo2cr-4qUCwW9o

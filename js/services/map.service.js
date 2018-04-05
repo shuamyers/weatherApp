@@ -32,10 +32,13 @@ function addMarker(loc) {
     var marker = new google.maps.Marker({
         position: loc,
         map: map,
-        title: 'Hello World!'
+        animation: google.maps.Animation.DROP,
+        title: 'Hello World'
     });
 }
-
+// marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/64/Map-Marker-Marker-Inside-Azure-icon.png');
+// console.log(marker);
+// markers.push(marker);
 
 export default {
     initMap,
