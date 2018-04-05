@@ -110,7 +110,10 @@ function getQueryStr () {
         let successful = document.execCommand('copy');
         changeClipboardIcon(true);
     } catch (err) {
-        console.log('Sorry copy did not work');
+        elClipboard.classList.add('highligh-err');
+        setTimeout(()=>{
+            elClipboard.classList.remove('highligh-err')
+        },1000)
     }
     elClipboard.hidden = true;
 }
@@ -137,8 +140,8 @@ function changeClipboardIcon(copied){
             elClipboard.classList.remove('highligh-success')
         },1000)
     }else{
-        elClipboard.classList.remove('fa-clipboard-check')
-        elClipboard.classList.add('fa-clipboard')
+        elClipboardIcon.classList.remove('fa-clipboard-check')
+        elClipboardIcon.classList.add('fa-clipboard')
     }
 }
 
@@ -146,13 +149,6 @@ function changeClipboardIcon(copied){
 
 
 
-// function renderBackground(sunrise,sunset){
-//     var elWhetherSec = document.querySelector('.whether-sec');
-//     if(Date.now < sunrise && Date.now < sunset){
-//         elWhetherSec.style.backgroundImage = `url('../images/day.jpg')`
-//     }else{
-//         elWhetherSec.style.backgroundImage = `url('../images/night.jpg')`
-//     }
-// }
+
 
 

@@ -28,12 +28,17 @@ function renderweatherNow(weather){
     document.querySelector('.status').innerText = weather.weather[0].main;
     document.querySelector('.humidity span').innerText = weather.main.humidity + '%'; 
     document.querySelector('.whether-img img').src=`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`
-    
+    var elImg = document.querySelector('.whether-img img');
+    var elWhetherNow = document.querySelector('.whether-now');
+    var day = weather.weather[0].icon.indexOf('d');
+    if(day > -1){
+        elWhetherNow.style.backgroundImage = `url('../images/day.jpg')`
+    }else{
+        elWhetherNow.style.backgroundImage = 'url("../images/night.jpg")'
+    }
     let sunsetObj = new Date(weather.sys.sunset);
     document.querySelector('.sunset span').innerText = sunsetObj.getHours() + ':' + sunsetObj.getMinutes();
     var elWind = document.querySelector('.wind span').innerText = weather.wind.speed;
-
-    // renderBackground(weather.sys.sunrise,weather.sys.sunset);
 }
 
 function renderweatherMunDays(weathers){
@@ -50,6 +55,7 @@ function renderweatherMunDays(weathers){
         `        
     });
     document.querySelector('.next-days').innerHTML = strHtmls.join('');
+   
 }
 
 export default{
