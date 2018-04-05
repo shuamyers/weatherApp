@@ -48,7 +48,7 @@ logo img{
     overflow: hidden;
     border: 1px solid #fff;
     font-size: 0.7em;
-    border-radius: none;
+    border-radius: 0;
 }
 .search-bar button{
     height: 44px;
