@@ -1,4 +1,7 @@
 import { GoogleMapsApi } from './gmap.class.js';
+import WeatherService from './whether.service.js'
+
+const GEOCODE_KEY = 'AIzaSyBLTGWuNv67ZQBPz4eFJLo2cr-4qUCwW9o'
 
 var map;
 
@@ -34,10 +37,9 @@ function addMarker(loc) {
 }
 
 
-
 export default {
     initMap,
     addMarker,
-    repositionMap
+    repositionMap,
 }
 

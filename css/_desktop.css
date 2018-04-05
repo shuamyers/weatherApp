@@ -1,0 +1,121 @@
+header h1{
+    margin: 0;
+    font-size: 44px;
+    padding-right: 10px; 
+    display: inline;
+}
+
+.logo{
+    width: 40%;
+    line-height: 43px;
+}
+
+.search-bar{
+    width: 60%;
+
+}
+
+.search-bar button{
+    border: none;
+}
+
+
+.my-loc-btn{
+    margin-left:5px;
+}
+
+.dropdown-metric{
+    margin: 0 5px;
+    border: none;
+}
+
+
+.search-bar input{
+    font-size: 1.5em;
+}
+
+
+.main-wrapper{
+    flex-wrap: nowrap
+}
+
+.whether-sec{
+    margin-right: 10px;
+    box-shadow: none;
+}
+.whether-now{
+    margin-top:30px;
+}
+.map-sec{
+    /* border:1px solid #fff; */
+    margin-top:30px; 
+    width: 100%; 
+    box-shadow: none;
+}
+.temp{
+    font-size: 30px;
+}
+    
+.map-wrapper{
+    width: 100%;
+   
+}
+.next-days{
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+}
+
+.day{
+    /* border: #fff 1px solid; */
+    color: #fff;
+    padding: 20px 10px 0;
+    text-align: center;
+    /* width: 150px; */ 
+    overflow: hidden;
+    padding: 20px;
+    min-width: 100px;
+    flex-grow: 1;
+}
+
+.day0{
+    display: block;
+    background-color: #1f4371;
+    flex-grow: 2
+}
+.day1{
+    display: block;
+    background-color: #2962a9;
+}
+.day2{
+    display: block;
+    background-color: #347bd5;
+}
+.day3{
+    display: block;
+    background-color: #609ae1;
+}
+.day4{
+    display: block;
+    background-color: #76a7e3;
+}
+.day5{
+    display: block;
+    background-color: #7eb1ef;
+}
+.day6{
+    display: block;
+    background-color: #91c2ff;
+}
+
+
+
+@media (min-width: 1095px) {
+    .logo{
+        width: 23%;
+    }
+    .search-bar{
+        width: 77%;
+    }
+  
+}
