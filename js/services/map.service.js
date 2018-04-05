@@ -4,6 +4,7 @@ import WeatherService from './whether.service.js'
 const GEOCODE_KEY = 'AIzaSyBLTGWuNv67ZQBPz4eFJLo2cr-4qUCwW9o'
 
 var map;
+var marker;
 
 function initMap(lat = 32.0749831, lng = 34.9120554) {
 
@@ -29,20 +30,23 @@ function repositionMap(loc){
 
 
 function addMarker(loc) {
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
         position: loc,
         map: map,
         animation: google.maps.Animation.DROP,
-        title: 'Hello World'
+        title: 'whether location'
     });
+    marker.setIcon('../../images/map-marker.png');
 }
-// marker.setIcon('http://icons.iconarchive.com/icons/icons-land/vista-map-markers/64/Map-Marker-Marker-Inside-Azure-icon.png');
-// console.log(marker);
-// markers.push(marker);
+
+// function moveMarker(loc) {
+//     marker.position = loc;
+// }
 
 export default {
     initMap,
     addMarker,
     repositionMap,
+    // moveMarker
 }
 

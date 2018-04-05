@@ -1,5 +1,5 @@
 
-var locs = [{lat: 11.22, lng: 22.11}]
+var locs = [{lat: 32.0852999, lng: 34.78176759999999}]
 
 function getLocs1() {
     return Promise.resolve(locs);

@@ -9,8 +9,8 @@ const GEOCODE_KEY = 'AIzaSyBLTGWuNv67ZQBPz4eFJLo2cr-4qUCwW9o'
 
 
 var crrLoc = {
-    lat : 32.0749831,
-    lng : 34.9120554
+    lat : 32.0852999,
+    lng : 34.78176759999999
 };
 
 locService.getLocs()
@@ -29,19 +29,14 @@ window.onload = () => {
                 mapService.addMarker(crrLoc);
             }
         );
-    // locService.getPosition() 
-    //     .then(pos => {
-    //         mapService.repositionMap(pos.coords.latitude,pos.coords.longitude);
-    //         console.log('User position is:', pos.coords);
-    //     })
-    //     .catch(err => {
-    //         console.log('err!!!', err);
-    //     })
+
     weatherService.getWeatherData(crrLoc.lat, crrLoc.lng);
 }
 
-
-document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
+var elLocBtn = document.querySelector('.my-loc-btn');
+    elLocBtn.addEventListener('click', (ev) => {
+    document.querySelector('.search-form input').value = '';
+    elLocBtn.style.background = '#f2eeeead'
     locService.getPosition()
         .then(({ coords }) => {
             var { latitude: lat, longitude: lng } = coords
@@ -57,6 +52,7 @@ document.querySelector('.my-loc-btn').addEventListener('click', (ev) => {
 })
 
 document.querySelector('.search-form').addEventListener('submit', () => {
+    elLocBtn.style.background = '#fff'
     searchAddress();
     changeClipboardIcon(false);
 })
@@ -91,12 +87,21 @@ document.querySelector('.fahrenheit').addEventListener('click', () => {
 })
 
 
+document.querySelector('.more-btn').addEventListener('click', () => {
+    document.querySelector('.next-days').style.display = 'flex';
+    document.querySelector('.more-btn').hidden = true;
+    document.querySelector('.close-btn').hidden = false; 
+})
 
+document.querySelector('.close-btn').addEventListener('click', () => {
+    document.querySelector('.next-days').style.display = 'none';
+    document.querySelector('.more-btn').hidden = false;
+    document.querySelector('.close-btn').hidden = true;
+})
 
 
 document.querySelector('.clipboard-btn').addEventListener('click', () => {
-    getQueryStr ()
-    
+    getQueryStr ()    
 })
 
 
@@ -110,9 +115,9 @@ function getQueryStr () {
         let successful = document.execCommand('copy');
         changeClipboardIcon(true);
     } catch (err) {
-        elClipboard.classList.add('highligh-err');
+        elClipboard.classList.add('highlight-err');
         setTimeout(()=>{
-            elClipboard.classList.remove('highligh-err')
+            elClipboard.classList.remove('highlight-err')
         },1000)
     }
     elClipboard.hidden = true;
@@ -135,18 +140,15 @@ function changeClipboardIcon(copied){
     if(copied){
         elClipboardIcon.classList.remove('fa-clipboard')
         elClipboardIcon.classList.add('fa-clipboard-check')
-        elClipboard.classList.add('highligh-success');
+        elClipboard.classList.add('highlight-success');
         setTimeout(()=>{
-            elClipboard.classList.remove('highligh-success')
+            elClipboard.classList.remove('highlight-success')
         },1000)
     }else{
         elClipboardIcon.classList.remove('fa-clipboard-check')
         elClipboardIcon.classList.add('fa-clipboard')
     }
 }
-
-
-
 
 
 

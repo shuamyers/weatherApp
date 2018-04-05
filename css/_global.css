@@ -5,6 +5,8 @@
 body{
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #067eb2; 
+    padding-bottom: 33.333px;        
 }
 
 header{
@@ -129,7 +131,7 @@ main{
 
 .main-wrapper{    
     flex-wrap: wrap;
-    padding: 8px 0;
+    padding: 20px 0;
 }
 
 .whether-sec{
@@ -175,11 +177,38 @@ main{
 
 .next-days{
     display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .day{
-    display: none;
+    text-align: center;
+    color: #fff;
 }
+.day0{
+    background-color: #1f4371;
+}
+.day1{
+    
+    background-color: #2962a9;
+}
+.day2{
+    background-color: #347bd5;
+}
+.day3{
+    
+    background-color: #609ae1;
+}
+.day4{
+    background-color: #76a7e3;
+}
+.day5{
+    background-color: #7eb1ef;
+}
+.day6{
+    background-color: #91c2ff;
+}
+
 
 footer{
     text-align: center;
@@ -187,6 +216,9 @@ footer{
     padding: 5px;
     background: #067eb2;
     margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%
 }
 
 
@@ -197,14 +229,27 @@ footer{
     max-width: 1200px;
 }
 
-.clipboard-btn.highligh-success{
+.clipboard-btn.highlight-success{
     background: rgba(172, 255, 47, 0.76);
 }
-.clipboard-btn.highligh-err{
+.clipboard-btn.highlight-err{
     background: rgba(243, 43, 43, 0.76);
 }
 
+.more-btn{
+    border: none;
+    background: #44a3d1e3;
+    width: 100%;
+    height: 44px;
+}
 
+.close-btn{
+    margin-top:20px;
+    border: none;
+    background: #44a3d1e3;
+    width: 100%;
+    height: 44px;
+}
 
 /* flex */
 
