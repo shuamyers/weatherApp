@@ -56,7 +56,8 @@ logo img{
     background: #fff; 
     cursor: pointer; 
     width: 40px;
-    border-left: 1px solid black
+    border-left: 1px solid black;
+    -webkit-appearance: none;
 }
 
 
