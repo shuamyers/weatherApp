@@ -141,12 +141,14 @@ function changeClipboardIcon(copied){
         elClipboardIcon.classList.remove('fa-clipboard')
         elClipboardIcon.classList.add('fa-clipboard-check')
         elClipboard.classList.add('highlight-success');
+        elClipboard.style.color = '#74d35c';
         setTimeout(()=>{
             elClipboard.classList.remove('highlight-success')
         },1000)
     }else{
         elClipboardIcon.classList.remove('fa-clipboard-check')
         elClipboardIcon.classList.add('fa-clipboard')
+        elClipboard.style.color = '#000';
     }
 }
 
