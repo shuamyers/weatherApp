@@ -17,8 +17,6 @@ function initMap(lat = 32.0749831, lng = 34.9120554) {
                 center: { lat, lng },
                 zoom: 15
             })
-
-        console.log('Map!', map);
     });
 
 
@@ -39,14 +37,10 @@ function addMarker(loc) {
     marker.setIcon('../../images/map-marker.png');
 }
 
-// function moveMarker(loc) {
-//     marker.position = loc;
-// }
 
 export default {
     initMap,
     addMarker,
     repositionMap,
-    // moveMarker
 }
 

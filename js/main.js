@@ -1,5 +1,3 @@
-console.log('Main!');
-
 import locService from './services/loc.service.js'
 import mapService from './services/map.service.js'
 import weatherService from './services/whether.service.js'
@@ -13,8 +11,6 @@ var crrLoc = {
     lng : 34.78176759999999
 };
 
-locService.getLocs()
-    .then(locs => console.log('locs', locs))
 
 window.onload = () => {
     let url = window.location.href;
@@ -43,7 +39,6 @@ var elLocBtn = document.querySelector('.my-loc-btn');
             mapService.repositionMap({ lat, lng });
             mapService.addMarker({ lat, lng })
             weatherService.getWeatherData(lat, lng);
-            console.log('User position is:', coords);
             changeClipboardIcon(false);
         })
         .catch(err => {
@@ -62,7 +57,6 @@ function searchAddress() {
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?&address=${address}&key=${GEOCODE_KEY}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
             var { location } = data.results[0].geometry;
             mapService.repositionMap(location);
             mapService.addMarker(location)
@@ -141,9 +135,9 @@ function changeClipboardIcon(copied){
         elClipboardIcon.classList.remove('fa-clipboard')
         elClipboardIcon.classList.add('fa-clipboard-check')
         elClipboard.classList.add('highlight-success');
-        elClipboard.style.color = '#74d35c';
         setTimeout(()=>{
             elClipboard.classList.remove('highlight-success')
+            elClipboard.style.color = '#74d35c';
         },1000)
     }else{
         elClipboardIcon.classList.remove('fa-clipboard-check')

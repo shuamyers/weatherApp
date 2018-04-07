@@ -48,7 +48,6 @@ header h1{
     margin-top:30px;
 }
 .map-sec{
-    /* border:1px solid #fff; */
     margin-top:30px; 
     width: 100%; 
     box-shadow: none;
@@ -69,11 +68,9 @@ header h1{
 }
 
 .day{
-    /* border: #fff 1px solid; */
     color: #fff;
     padding: 20px 10px 0;
     text-align: center;
-    /* width: 150px; */ 
     overflow: hidden;
     padding: 10px;
     min-width: 100px;

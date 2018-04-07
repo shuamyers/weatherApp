@@ -5,15 +5,14 @@ function getWeatherData(lat, lng, unit = 'metric') {
     var NUM_OF_DAYS = 7 ;
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=${unit}&APPID=${weather_API_KEY}`)
         .then(res => {
-            console.log('weather data is', res.data)
-            renderweatherNow(res.data);
+            renderWeatherNow(res.data);
         })
         .catch(err => {
             console.log('weather now Err', err);
         })
     axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lng}&cnt=${NUM_OF_DAYS}&units=${unit}&APPID=${weather_API_KEY}`)
         .then(res => {
-            renderweatherMunDays(res.data);
+            renderWeatherMunDays(res.data);
         })
         .catch(err => {
             console.log('weather by hours Err', err);
@@ -21,7 +20,7 @@ function getWeatherData(lat, lng, unit = 'metric') {
     // 2877695d61c707f312e28cc68f9dc19d
 }
 
-function renderweatherNow(weather){
+function renderWeatherNow(weather){
     document.querySelector('.city').innerText = weather.name;
     document.querySelector('.country-code').innerText = weather.sys.country;
     document.querySelector('.temp').innerText = Math.round(weather.main.temp) + '°';
@@ -41,7 +40,7 @@ function renderweatherNow(weather){
     var elWind = document.querySelector('.wind span').innerText = weather.wind.speed;
 }
 
-function renderweatherMunDays(weathers){
+function renderWeatherMunDays(weathers){
     var weather = weathers.list; 
     let strHtmls = weathers.list.map((strHtml,idx) => {
         let date =new Date((weather[idx].dt_txt))
