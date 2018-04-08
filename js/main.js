@@ -100,7 +100,7 @@ document.querySelector('.clipboard-btn').addEventListener('click', () => {
 
 
 function getQueryStr () {
-    let queryStr = `http://127.0.0.1:5500/?lat=${crrLoc.lat}&lng=${crrLoc.lng}`;
+    let queryStr = `https://shuamyers.github.io/weatherApp/?lat=${crrLoc.lat}&lng=${crrLoc.lng}`;
     let elClipboard = document.querySelector('#clipboard');
     elClipboard.innerText = queryStr;
     elClipboard.hidden = false;
