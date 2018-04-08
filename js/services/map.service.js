@@ -37,6 +37,19 @@ function addMarker(loc) {
     marker.setIcon('../../images/map-marker.png');
 }
 
+function autocomplete() {
+    var input = document.querySelector('.search-bar input');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    google.maps.event.addListener(autocomplete, 'place_changed', () => {
+        console.log('changed!');
+        setTimeout(() => {
+            document.querySelector(".search-form button").click();       
+        },200)
+    })
+}
+
+google.maps.event.addDomListener(window, 'load', autocomplete);
+
 
 export default {
     initMap,

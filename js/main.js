@@ -46,7 +46,8 @@ var elLocBtn = document.querySelector('.my-loc-btn');
         })
 })
 
-document.querySelector('.search-form').addEventListener('submit', () => {
+document.querySelector('.search-form').addEventListener('submit', (ev) => {
+    ev.preventDefault(); 
     elLocBtn.style.background = '#fff'
     searchAddress();
     changeClipboardIcon(false);
