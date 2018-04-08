@@ -26,14 +26,14 @@ function renderWeatherNow(weather){
     document.querySelector('.temp').innerText = Math.round(weather.main.temp) + '°';
     document.querySelector('.status').innerText = weather.weather[0].main;
     document.querySelector('.humidity span').innerText = weather.main.humidity + '%'; 
-    document.querySelector('.whether-img img').src=`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`
-    var elImg = document.querySelector('.whether-img img');
-    var elWhetherNow = document.querySelector('.whether-now');
+    document.querySelector('.weather-img img').src=`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`
+    var elImg = document.querySelector('.weather-img img');
+    var elweatherNow = document.querySelector('.weather-now');
     var day = weather.weather[0].icon.indexOf('d');
     if(day > -1){
-        elWhetherNow.style.backgroundImage = `url('../images/day.jpg')`
+        elweatherNow.style.backgroundImage = `url('../images/day.jpg')`
     }else{
-        elWhetherNow.style.backgroundImage = 'url("../images/night.jpg")'
+        elweatherNow.style.backgroundImage = 'url("../images/night.jpg")'
     }
     let sunsetObj = new Date(weather.sys.sunset);
     document.querySelector('.sunset span').innerText = sunsetObj.getHours() + ':' + sunsetObj.getMinutes();

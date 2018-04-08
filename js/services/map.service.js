@@ -1,5 +1,5 @@
 import { GoogleMapsApi } from './gmap.class.js';
-import WeatherService from './whether.service.js'
+import WeatherService from './weather.service.js'
 
 const GEOCODE_KEY = 'AIzaSyBLTGWuNv67ZQBPz4eFJLo2cr-4qUCwW9o'
 
@@ -32,7 +32,7 @@ function addMarker(loc) {
         position: loc,
         map: map,
         animation: google.maps.Animation.DROP,
-        title: 'whether location'
+        title: 'weather location'
     });
     marker.setIcon('../../images/map-marker.png');
 }

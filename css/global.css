@@ -133,7 +133,7 @@ main{
     padding: 20px 0;
 }
 
-.whether-sec{
+.weather-sec{
     width:100%;
     color: #fff;
     margin:0;
@@ -147,16 +147,16 @@ main{
     font-weight: 700;
 }
 
-.whether-now{
+.weather-now{
     background-image: url('../images/day.jpg');
     background-size: cover; 
     height: 300px;  
 }
 
-.whether-wrapper{
+.weather-wrapper{
     text-shadow: 0 0 2px black;
 }
-.whether-img img{
+.weather-img img{
     padding-left: 60px;
 }
 

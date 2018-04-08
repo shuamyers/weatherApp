@@ -1,6 +1,6 @@
 import locService from './services/loc.service.js'
 import mapService from './services/map.service.js'
-import weatherService from './services/whether.service.js'
+import weatherService from './services/weather.service.js'
 
 
 const GEOCODE_KEY = 'AIzaSyBLTGWuNv67ZQBPz4eFJLo2cr-4qUCwW9o'
