@@ -34,7 +34,7 @@ function addMarker(loc) {
         animation: google.maps.Animation.DROP,
         title: 'weather location'
     });
-    marker.setIcon('../../images/map-marker.png');
+    marker.setIcon('./../images/map-marker.png');
 }
 
 function autocomplete() {
