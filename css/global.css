@@ -152,6 +152,9 @@ main{
     background-size: cover; 
     height: 300px;  
 }
+.whether-content{
+    padding: 0 20px;
+}
 
 .weather-wrapper{
     text-shadow: 0 0 2px black;
