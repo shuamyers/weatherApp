@@ -31,9 +31,9 @@ function renderWeatherNow(weather){
     var elweatherNow = document.querySelector('.weather-now');
     var day = weather.weather[0].icon.indexOf('d');
     if(day > -1){
-        elweatherNow.style.backgroundImage = `url('../../images/day.jpg')`
+        elweatherNow.style.backgroundImage = `url('/images/day.jpg')`
     }else{
-        elweatherNow.style.backgroundImage = 'url("../../images/night.jpg")'
+        elweatherNow.style.backgroundImage = 'url("/images/night.jpg")'
     }
     let sunsetObj = new Date(weather.sys.sunset);
     document.querySelector('.sunset span').innerText = sunsetObj.getHours() + ':' + sunsetObj.getMinutes();
